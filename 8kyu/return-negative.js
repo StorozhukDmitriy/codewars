@@ -12,5 +12,12 @@
 //solution
 
 function makeNegative(num) {
-    return num = -num;
+  let result = num;
+  if (num > 0) {
+    result = -num;
+  } else {
+    result = num;
   }
+  return result;
+}
+
