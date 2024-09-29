@@ -8,12 +8,8 @@
 // Input: 123456789 Output: 987654321
 
 //Solution
-let b = 56742145;
-let result = null;
 function descendingOrder(n) {
-  let arr = Array.from(n.toString());
-  arr.sort((a, b) => b - a);
-  result = arr.join("");
-  return Number(result);
+  return parseInt(String(n).split("").sort().reverse().join(""))
+  
 }
 console.log(descendingOrder(b));
