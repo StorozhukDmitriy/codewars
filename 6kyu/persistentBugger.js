@@ -10,19 +10,12 @@ Write a function, persistence, that takes in a positive parameter num and return
 
 //solution
 function persistence(num) {
-    let arr = num.toString().split('').map(num => Number(num));
-    const toArray = (array) => {
-        return array.reduce((acc, curr) => acc * curr).toString().split('').map(num => Number(num))
-    }
-
     let count = 0;
-    for (let i = 0; i <= arr.length + count; i++) {
-        if (arr.length === 1) {
-            return count
-        } else {
-            arr = toArray(arr);
-            ++count;
-        }
+    num = num.toString()
+
+    while(num.length > 1){
+        count++;
+        num = num.split('').map(Number).reduce((acc, curr)=> acc * curr).toString();
     }
     return count
 }
