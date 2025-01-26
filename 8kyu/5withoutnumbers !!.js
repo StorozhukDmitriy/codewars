@@ -6,6 +6,5 @@
 
 //solution
 function unusualFive() {
-    const Arr = ['a','a','a','a','a']
-    return Arr.length;
+    return "aaaaa".length;
 }
