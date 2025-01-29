@@ -10,21 +10,8 @@
 // [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
 //Solution
-function findOdd(A) {
-   const res = A.reduce((acc, cur) => {
-        if(acc.hasOwnProperty(cur)) {
-            acc[cur]++;
-        }else {
-            acc[cur] = 1;
-        }
-        return acc;
-    },{})
-
-    for (const key in res) {
-        if (res[key] % 2 === 1) {
-            return Number(key);
-        }
-    }
+const findOdd =(A)=>{
+    return A.reduce((a,b)=> a ^ b)
 }
 
 
