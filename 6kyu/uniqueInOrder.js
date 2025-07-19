@@ -9,14 +9,23 @@
 //Solution
 var uniqueInOrder = function (iterable) {
 
-    if (typeof iterable === 'string' ) {
-        const arr =new Set (iterable.split(""))
-        return (Array.from(arr))
+    const result = []
+    if (typeof iterable === 'string') {
+        const arr = iterable.split("")
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== arr[i + 1]) {
+                result.push(arr[i]);
+            }
+        }
 
     } else {
-        return  new Set(iterable)
+        for (let i = 0; i < iterable.length; i++) {
+            if (iterable[i] !== iterable[i + 1]) {
+                result.push(iterable[i]);
+            }
+        }
     }
-
+    return result
 };
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+console.log(uniqueInOrder([1, 2, 2, 3, 3]))
